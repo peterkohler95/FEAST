@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>FEAST</title>
 
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <script src="main.js"></script>
@@ -24,8 +24,9 @@
   <body>
     <div class="container">
         <!-- Content here -->
-        <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1">FEAST</span>
+        <nav class="navbar navbar-light bg-light" id="nav">
+            <span class="navbar-brand mb-0 h1" >FEAST</span>
+            
         </nav>  
         <div style="width: 640px; height: 480px" id="mapContainer"></div>
         <div class="moreInfoFooter"></div>
@@ -35,8 +36,8 @@
     <script>
             // Initialize the platform object:
             var platform = new H.service.Platform({
-            'app_id': 'XqTQEqVeXSQFjKolnr0Q',
-            'app_code': 'BpJAOtibtpZJ-_PfMCEtKQ'
+            'app_id': '{app_id}',
+            'app_code': '{app_code}'
             });
         
             // Obtain the default map types from the platform object
