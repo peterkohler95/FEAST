@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -11,11 +12,16 @@
     <title>Welcome to FEAST</title>
 
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
-  type="text/javascript" charset="utf-8"></script>
-<script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
-  type="text/javascript" charset="utf-8"></script>
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+ 
+    <script src="main.js"></script>
+
+    <!--HERE Map API -->
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
+
   </head>
   <body>
   	<script>
@@ -124,6 +130,7 @@ router.calculateRoute(routingParameters, onResult,
         <nav class="navbar navbar-light bg-light">
             <span class="navbar-brand mb-0 h1">FEAST</span>
         </nav>  
+<<<<<<< HEAD
         <!-- HERE Map XYZ -->
         <div class="container">
         	 <div style="width: 960px; height: 540px" id="mapContainer">
@@ -137,7 +144,32 @@ router.calculateRoute(routingParameters, onResult,
 
 
 
+=======
+        <div style="width: 640px; height: 480px" id="mapContainer"></div>
+        <div class="moreInfoFooter"></div>
+    </div>  
+>>>>>>> 0475fd7893e45f0a43b7f5a0a42ddf26ee05ecaa
     
+
+    <script>
+            // Initialize the platform object:
+            var platform = new H.service.Platform({
+            'app_id': 'XqTQEqVeXSQFjKolnr0Q',
+            'app_code': 'BpJAOtibtpZJ-_PfMCEtKQ'
+            });
+        
+            // Obtain the default map types from the platform object
+            var maptypes = platform.createDefaultLayers();
+        
+            // Instantiate (and display) a map object:
+            var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.normal.map,
+            {
+              zoom: 11,
+              center: { lng: -87.72, lat: 41.81 }
+            });
+          </script>
 
 
     <!-- Optional JavaScript -->
