@@ -19,9 +19,13 @@
 
     <!--HERE Map API -->
     <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
-    type="text/javascript" charset="utf-8"></script>
+        type="text/javascript" charset="utf-8"></script>
     <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
-    type="text/javascript" charset="utf-8"></script>
+        type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" 
+      type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" 
+      href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
 
   </head>
   <body>
@@ -45,8 +49,8 @@
             // Initialize the platform object:
 
             var platform = new H.service.Platform({
-            'app_id': '{YOUR_APP_ID}',
-            'app_code': '{YOUR_APP_CODE}'
+            'app_id': '{app_id}',
+            'app_code': '{app_code}'
           });
             
             // Retrieve the target element for the map:
@@ -54,6 +58,9 @@
 
             // Obtain the default map types from the platform object
             var maptypes = platform.createDefaultLayers();
+
+            // Get the default map types from the Platform object:
+            var defaultLayers = platform.createDefaultLayers();
         
             // Instantiate (and display) a map object:
             var map = new H.Map(
@@ -63,6 +70,9 @@
               zoom: 11,
               center: { lng: -87.72, lat: 41.81 }
             });
+
+            // Create the default UI:
+            var ui = H.ui.UI.createDefault(map, defaultLayers);
 
      // Create the parameters for the routing request:
             var routingParameters = {
