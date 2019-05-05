@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.urbanui.com/flare/template/pages/widgets.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Aug 2018 16:11:19 GMT -->
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>FEAST</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../vendors/iconfonts/simple-line-icon/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../vendors/css/vendor.bundle.addons.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="../vendors/iconfonts/font-awesome/css/font-awesome.min.css" />
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../images/favicon.png" />
+
+  <!--HERE Map API -->
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-core.js"
+        type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-service.js"
+        type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.0/mapsjs-ui.js" 
+      type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" 
+      href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+      <script src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js" 
+     type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../partials/_horizontal-navbar.html -->
+    <nav class="navbar horizontal-layout col-lg-12 col-12 p-0">
+      <div class="nav-top flex-grow-1">
+        <div class="container d-flex flex-row h-100">
+          <div class="text-center navbar-brand-wrapper d-flex align-items-top">
+            <a class="navbar-brand brand-logo" href="../index-2.html"><!-- <img src="../images/logo.svg" alt="logo"/></a> -->
+            <h1 style="color:white">FEAST</h1>
+            <a class="navbar-brand brand-logo-mini" href="../index-2.html"><img src="../images/logo-mini.svg" alt="logo"/></a>
+          </div>
+          <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+            <form class="search-field" action="#">
+              <div class="form-group mb-0">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="search">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="icon-magnifier"></i></span>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <ul class="navbar-nav navbar-nav-right mr-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                  <i class="icon-bell"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                  <a class="dropdown-item py-3">
+                    <p class="mb-0 font-weight-medium float-left">You have 4 new notifications
+                    </p>
+                    <span class="badge badge-pill badge-inverse-info float-right">View all</span>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-inverse-success">
+                        <i class="icon-exclamation mx-0"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <h6 class="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
+                      <p class="font-weight-light small-text mb-0">
+                        Just now
+                      </p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-inverse-warning">
+                        <i class="icon-bubble mx-0"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <h6 class="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
+                      <p class="font-weight-light small-text mb-0">
+                        Private message
+                      </p>
+                    </div>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-inverse-info">
+                        <i class="icon-user-following mx-0"></i>
+                      </div>
+                    </div>
+                    <div class="preview-item-content">
+                      <h6 class="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
+                      <p class="font-weight-light small-text mb-0">
+                        2 days ago
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="icon-equalizer"></i>
+                </a>
+              </li>
+              <li class="nav-item nav-profile">
+                <a class="nav-link" href="#">
+                  <span class="nav-profile-text">Hello Andre Rivera</span>
+                  <img src="../images/faces/face1.jpg" class="rounded-circle" alt="profile"/>
+                </a>
+              </li> -->
+            </ul>
+            <button class="navbar-toggler align-self-center" type="button" data-toggle="minimize">
+              <span class="icon-menu text-white"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="nav-bottom">
+        <div class="container">
+          <ul class="nav page-navigation">
+            <li class="nav-item">
+              <a href="../index-2.html" class="nav-link"><i class="link-icon icon-screen-desktop"></i><span class="menu-title">Tracker</span></a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <div class="main-panel">
+        <div class="content-wrapper">
+        	<div class="row">
+        		<h4 class="card-title" id="location">Locator</h4>
+                  <!-- Content here -->
+			      
+			        <!-- HERE Map XYZ -->
+			        <div class="container">
+			        	 <div style="width: 100%; height: 480px" id="mapContainer"> 	
+			        	 </div> 	
+			        </div>
+			        <div class="moreInfoFooter"></div>
+                  
+            <div class="col-12">
+              <div class="card">
+                
+              </div>
+            </div>
+          </div>
+					
+
+					<div class="row">
+						<div class="col-md-12 grid-margin stretch-card">
+							<div class="card">
+								<div class="card-body">
+											<div class="d-flex align-items-center">
+												<div class="d-inline-block">
+											<div class="bg-success px-4 py-2 rounded">
+												<i class="fa fa-truck fa-3x white"  style="color:white"></i>
+											</div>
+										</div>
+												
+												<div class="ml-3">
+													<h4>Truck</h4>
+													<p class="text-muted mb-0" id="coordinates">Nearby</p>
+												</div>
+											</div>
+											<!-- <p class="mt-4 card-text">
+													Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+													Aenean commodo ligula eget dolor. Lorem
+											</p> -->
+											<!-- <button class="btn btn-info btn-sm mt-3 mb-4">Track</button> -->
+											<div class="border-top pt-3">
+												<div class="row">
+													<div class="col-4">
+														<h6>600</h6>
+														<p>Items</p>
+													</div>
+													<div class="col-4">
+														<h6>5</h6>
+														<p>Stops</p>
+													</div>
+													<div class="col-4">
+														<h6>Large</h6>
+														<p>Package Size</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+						<div class="col-md-12 grid-margin grid-margin-md-0 stretch-card">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title">Truck #4 - May, 5th 2018</h4>
+									<div class="d-flex align-items-center py-3 border-bottom">
+										<img class="img-sm rounded-circle" src="../images/truck.png" alt="profile">
+										<div class="ml-3">
+											<h6 class="mb-1">11:00 AM - 12:15 PM</h6>
+											<small class="text-muted mb-0"><i class="icon-location-pin-outline mr-1"></i>200 E Randolph St</small>
+										</div>
+										<i class="icon-check font-weight-bold ml-auto px-1 py-1 text-info"></i>
+									</div>
+									<div class="d-flex align-items-center py-3 border-bottom">
+										<img class="img-sm rounded-circle" src="../images/truck.png" alt="profile">
+										<div class="ml-3">
+											<h6 class="mb-1">1:45 PM - 3:00 PM</h6>
+											<small class="text-muted mb-0"><i class="icon-location-pin-outline mr-1"></i>Whole Foods - Englewood</small>
+										</div>
+										<i class="icon-plus font-weight-bold ml-auto px-1 py-1 text-success"></i>
+									</div>
+									<div class="d-flex align-items-center py-3 border-bottom">
+										<img class="img-sm rounded-circle" src="../images/truck.png" alt="profile">
+										<div class="ml-3">
+											<h6 class="mb-1">4:00 PM - 5:15 PM</h6>
+											<small class="text-muted mb-0"><i class="icon-location-pin-outline mr-1"></i>Garfield Ridge - Archer Liquors</small>
+										</div>
+										<i class="icon-check font-weight-bold ml-auto px-1 py-1 text-info"></i>
+									</div>
+									<div class="d-flex align-items-center py-3 border-bottom">
+										<img class="img-sm rounded-circle" src="../images/truck.png" alt="profile">
+										<div class="ml-3">
+											<h6 class="mb-1">6:15 PM - 7:30 PM</h6>
+											<small class="text-muted mb-0"><i class="icon-location-pin-outline mr-1"></i>Whole Foods - Hinsdale</small>
+										</div>
+										<i class="icon-plus font-weight-bold ml-auto px-1 py-1 text-success"></i>
+									</div>
+									<div class="d-flex align-items-center pt-3 mb-4">
+										<img class="img-sm rounded-circle" src="../images/truck.png" alt="profile">
+										<div class="ml-3">
+											<h6 class="mb-1">Rafell John</h6>
+											<small class="text-muted mb-0"><i class="icon-location-pin-outline mr-1"></i>West Loop - 640 W Washington</small>
+										</div>
+										<i class="icon-plus font-weight-bold ml-auto px-1 py-1 text-success"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+        </div>
+
+<div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card text-white border-0">
+                <img class="card-img h-100 rounded-0" src="../images/chicago.jpg" alt="Card image">
+                <div class="card-img-overlay d-flex flex-column justify-content-between">
+                  <h4 class="font-weight-light">
+                      May 04 2019
+                  </h4>
+                  <div>
+                    <h4 class="font-weight-light">
+                        We want to serve you 
+                    </h4>
+                    <h3 class="font-weight-light mb-0">
+                        Welcome to Chicago
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-stretch">
+              <div class="row">
+                <div class="col-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                      <div>
+                        <p class="mb-1"><span class="h4 mb-0 mr-2">Truck #1</span>Greater Chicago Food Depository</p>
+                        <!-- <p class="mb-0 text-muted font-weight-light">The search engine giant</p>                         -->
+                      </div>
+                      <div>
+                        <h6 class="font-weight-normal">West Loop</h6>
+                        <span class="badge badge-primary">+500 capacity</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                      <div>
+                        <p class="mb-1"><span class="h4 mb-0 mr-2">Truck #2</span>Greater Chicago Food Depository</p>                        
+                        <!-- <p class="mb-0 text-muted font-weight-light">Master of innovations</p> -->
+                      </div>
+                      <div>
+                        <h6 class="font-weight-normal">East Village</h6>
+                        <span class="badge badge-primary">+1000 capacity</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Inventory</h4>
+                  <div class="mb-3">
+                    <p class="d-flex mb-2">
+                      Eggs
+                      <span class="ml-auto font-weight-bold">70%</span>
+                    </p>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <p class="d-flex mb-2">
+                      Penut Butter
+                      <span class="ml-auto font-weight-bold">15%</span>
+                    </p>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <p class="d-flex mb-2">
+                      Wiskey
+                      <span class="ml-auto font-weight-bold">35%</span>
+                    </p>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 35%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <p class="d-flex mb-2">
+                      Broccoli
+                      <span class="ml-auto font-weight-bold">30%</span>
+                    </p>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <p class="d-flex mb-2">
+                      Bread
+                      <span class="ml-auto font-weight-bold">50%</span>
+                    </p>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="d-flex mb-2">
+                      Cereal
+                      <span class="ml-auto font-weight-bold">90%</span>
+                    </p>
+                    <div class="progress progress-xs">
+                      <div class="progress-bar bg-info" role="progressbar" style="width: 90%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+							<div class="row">
+						<div class="col-md-6 grid-margin">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title mb-0">Families Served</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<div class="d-inline-block pt-3">
+											<div class="d-md-flex">
+												<h2 class="mb-0">349</h2>
+												<div class="d-flex align-items-center ml-md-2 mt-2 mt-md-0">
+													<i class="icon-clock text-muted"></i>
+													<small class=" ml-1 mb-0">Updated: 6:10pm</small>
+												</div>
+											</div>
+											<small class="text-gray">Raised from 89 orders.</small>
+										</div>
+										<div class="d-inline-block">
+											<div class="bg-success px-4 py-2 rounded">
+												<i class="icon-user text-white icon-lg"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 grid-margin">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title mb-0">Dollar's Saved</h4>
+									<div class="d-flex justify-content-between align-items-center">
+										<div class="d-inline-block pt-3">
+											<div class="d-md-flex">
+												<h2 class="mb-0">$20,1030</h2>
+												<div class="d-flex align-items-center ml-md-2 mt-2 mt-md-0">
+													<i class="icon-clock text-muted"></i>
+													<small class="ml-1 mb-0">Updated: 05:42pm</small>
+												</div>
+											</div>
+											<small class="text-gray">hey, let’s have lunch together</small>
+										</div>
+										<div class="d-inline-block">
+											<div class="bg-warning px-4 py-2 rounded">
+												<i class="icon-wallet text-white icon-lg"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+        				</div>
+
+
+        <!-- content-wrapper ends -->
+        <!-- partial:../partials/_footer.html -->
+        <footer class="footer">
+          <div class="w-100 clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="https://www.chicagosfoodbank.org/" target="_blank">Greater Chicago Food Depository</a>. All rights reserved.</span>
+            <!-- <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="icon-heart text-danger"></i></span> -->
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../vendors/js/vendor.bundle.base.js"></script>
+  <script src="../vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="../js/template.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+
+  <script>
+            // Initialize the platform object:
+
+            var platform = new H.service.Platform({
+            'app_id': 'ADD_KEY',
+            'app_code': 'ADD_KEY'
+          });
+            
+            // Retrieve the target element for the map:
+            var targetElement = document.getElementById('mapContainer');
+
+            // Obtain the default map types from the platform object
+            var maptypes = platform.createDefaultLayers();
+
+            // Get the default map types from the Platform object:
+            var defaultLayers = platform.createDefaultLayers();
+        
+            // Instantiate (and display) a map object:
+            var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.normal.map,
+            {
+              zoom: 11,
+              center: { lng: -87.72, lat: 41.81 }
+            });
+
+            // Create the default UI:
+            var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+            // Enable the event system on the map instance:
+            var mapEvents = new H.mapevents.MapEvents(map);
+
+            // Add event listeners:
+            map.addEventListener('tap', function(evt) {
+            // Log 'tap' and 'mouse' events:
+            console.log(evt.type, evt.currentPointer.type); 
+            });
+
+            // Instantiate the default behavior, providing the mapEvents object: 
+            var behavior = new H.mapevents.Behavior(mapEvents);
+
+     // Create the parameters for the routing request:
+            var routingParameters = {
+              // The routing mode:
+              'mode': 'fastest;car',
+              // The start point of the route:
+              'waypoint0': 'geo!41.8177679,-87.72911',
+              // The end point of the route:
+              'waypoint1': 'geo!41.8266528,-87.6240767',
+              // To retrieve the shape of the route we choose the route
+              // representation mode 'display'
+              'representation': 'display'
+            };
+
+            // Define a callback function to process the routing response:
+            var onResult = function(result) {
+              var route,
+                routeShape,
+                startPoint,
+                endPoint,
+                linestring;
+              if(result.response.route) {
+              // Pick the first route from the response:
+              route = result.response.route[0];
+              // Pick the route's shape:
+              routeShape = route.shape;
+
+              // Create a linestring to use as a point source for the route line
+              linestring = new H.geo.LineString();
+
+              // Push all the points in the shape into the linestring:
+              routeShape.forEach(function(point) {
+                var parts = point.split(',');
+                linestring.pushLatLngAlt(parts[0], parts[1]);
+              });
+
+              // Retrieve the mapped positions of the requested waypoints:
+              startPoint = route.waypoint[0].mappedPosition;
+              endPoint = route.waypoint[1].mappedPosition;
+
+              // Create a polyline to display the route:
+              var routeLine = new H.map.Polyline(linestring, {
+                style: { strokeColor: 'blue', lineWidth: 10 }
+              });
+
+              // Create a marker for the start point:
+              var startMarker = new H.map.Marker({
+                lat: startPoint.latitude,
+                lng: startPoint.longitude
+              });
+
+              // Create a marker for the end point:
+              var endMarker = new H.map.Marker({
+                lat: endPoint.latitude,
+                lng: endPoint.longitude
+              });
+
+              // Add the route polyline and the two markers to the map:
+              map.addObjects([routeLine, startMarker, endMarker]);
+
+              // Set the map's viewport to make the whole route visible:
+              map.setViewBounds(routeLine.getBounds());
+              }
+            };
+
+            // Get an instance of the routing service:
+            var router = platform.getRoutingService();
+
+            // Call calculateRoute() with the routing parameters,
+            // the callback and an error callback function (called if a
+            // communication error occurs):
+            router.calculateRoute(routingParameters, onResult,
+              function(error) {
+                alert(error.message);
+              });                                    
+            </script>
+
+            <script>
+			var x = document.getElementById("demo");
+			function getLocation() {
+			  if (navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(showPosition);
+			  } else {
+			    x.innerHTML = "Geolocation is not supported by this browser.";
+			  }
+			}
+
+			function showPosition(position) {
+				// alert(position.coords.latitude + ' ' + position.coords.longitude)
+				document.getElementById("coordinates").innerHTML = "Location - " + '(' + position.coords.latitude + ', ' + position.coords.longitude + ')';
+			  // x.innerHTML = "Latitude: " + position.coords.latitude + 
+			  // "<br>Longitude: " + position.coords.longitude; 
+			}
+			</script>
+
+
+    <!-- Optional JavaScript -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    	$( document ).ready(function() {
+		    getLocation();
+		});
+
+    </script>
+</body>
+
+
+<!-- Mirrored from www.urbanui.com/flare/template/pages/widgets.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Aug 2018 16:11:19 GMT -->
+</html>
